@@ -1,0 +1,1983 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #fff4e6;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Colonne pour que le footer suive le contenu */
+    min-height: 100vh; /* Assure que le body occupe toute la fenêtre */
+}
+
+/* Structure de la page */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-sans-scroll {
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime les rembourrages */
+    display: flex; /* Utilise flexbox pour une meilleure gestion des éléments internes */
+    justify-content: center; /* Centre l'iframe horizontalement */
+}
+
+iframe {
+    width: 100%; /* L'iframe occupe toute la largeur de son conteneur */
+    height: auto; /* La hauteur est automatique pour maintenir les proportions */
+    aspect-ratio: 16 / 9; /* Maintient un ratio d'aspect de 16:9, modifiez si nécessaire */
+    border: none; /* Supprime la bordure de l'iframe */
+    overflow: hidden; /* Cela cache les barres de défilement de l'iframe */
+    margin: 0;
+}
+
+
+/* Header */
+header {
+    background-color: #F13729;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header .nav-links li {
+    margin-left: 20px;
+}
+
+header .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le menu hamburger */
+.burger-menu {
+    display: none; /* Masque le menu hamburger par défaut */
+    flex-direction: column; /* Aligne les barres du hamburger verticalement */
+    cursor: pointer; /* Change le curseur pour indiquer un bouton cliquable */
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+}
+
+/* Styles Responsifs */
+@media (max-width: 768px) {
+    header .nav-links {
+        display: none; /* Cache le menu de navigation par défaut sur mobile */
+        flex-direction: column; /* Aligne les liens verticalement */
+        align-items: flex-start; /* Aligne les éléments à gauche */
+        margin: 0; /* Supprime le margin par défaut */
+        padding: 0; /* Supprime le padding par défaut */
+        position: absolute; /* Positionne le menu */
+        top: 100%; /* Le menu s'affiche sous le header */
+        left: 0; /* Aligne le menu à gauche */
+        background-color: #F13729; /* Fond identique au header */
+        width: 100%; /* S'assure que le menu prend toute la largeur */
+        z-index: 999; /* Pour s'assurer qu'il est au-dessus d'autres éléments */
+    }
+
+    header .nav-links li {
+        margin: 10px 0; /* Ajoute de l'espace entre les liens */
+        padding: 0 20px; /* Ajoute un padding latéral */
+    }
+
+    .burger-menu {
+        display: flex; /* Affiche le menu hamburger sur les petits écrans */
+    }
+
+    /* Affichage du menu lorsque le bouton est cliqué */
+    .nav-links.active {
+        display: flex; /* Affiche le menu */
+    }
+}
+
+#hero {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Alignement vertical pour les petits écrans */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: black;
+    position: relative;
+    padding: 0 20px; /* Ajout de padding pour éviter que le texte touche les bords */
+}
+
+.hero-logo {
+    display: block; /* Centre le logo */
+    margin: 0 auto 20px; /* Marge en bas pour l'espacement */
+    max-width: 150px; /* Ajuste la taille du logo selon tes besoins */
+    height: auto; /* Garde le ratio d'aspect */
+    animation: fadeInDown 1s ease-in-out;
+    margin-top: 25px;
+}
+
+#hero .container {
+    max-width: 1200px;
+    width: 100%; /* Prend toute la largeur disponible */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: #F13729;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espace entre les boutons */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur les petits écrans */
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #F13729;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.cta-btn:hover {
+    background-color: #ff7b8a;
+}
+
+.secondary-btn {
+    background-color: #F13729; /* Couleur du bouton secondaire */
+}
+
+.secondary-btn:hover {
+    background-color: #ff7b8a;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries pour rendre la section responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem; /* Réduction de la taille de la police sur mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; /* Réduction de la taille de la police sur mobile */
+    }
+
+    .cta-btn {
+        padding: 10px 20px; /* Ajustement du padding pour les boutons sur mobile */
+        font-size: 1rem; /* Réduction de la taille de la police des boutons */
+    }
+}
+
+
+/* Team Section */
+#team {
+    padding: 50px 20px;
+    background-color: #FFF4E6;
+    flex: 1;
+}
+
+.section-title {
+    font-size: 2.5rem; /* Taille de la police */
+    text-align: center; /* Alignement centré */
+    color: #ff4c60; /* Couleur du texte */
+    margin-bottom: 25px; /* Marge en bas */
+    text-transform: uppercase; /* Texte en majuscules */
+    animation: fadeInDown 1s ease-in-out; /* Animation d'apparition */
+    font-family: 'Arial', sans-serif; /* Choix d'une police plus moderne */
+    font-weight: bold; /* Gras pour plus de présence */
+    position: relative; /* Position pour les effets de pseudo-éléments */
+}
+
+.section-intro {
+    font-size: 1.2rem; /* Taille de la police */
+    line-height: 1.6; /* Hauteur de ligne pour plus de lisibilité */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Alignement centré */
+    max-width: 800px; /* Largeur maximale pour le texte */
+    font-family: 'Arial', sans-serif; /* Police moderne */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.team-category {
+    margin-bottom: 50px;
+}
+
+.category-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ff4c60;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer les membres de l'équipe dans la grille */
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.team-member {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.team-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.team-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive Grid for Smaller Screens */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+    background-color: #F13729;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 0;
+    overflow: auto;
+    position: relative;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Sections communes */
+section {
+    margin-top: 80px; /* Évite que le contenu passe sous le header */
+}
+
+/* Dernière Revue */
+#last-review {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+}
+
+.review-highlight {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.review-highlight:hover {
+    transform: scale(1.02);
+}
+
+.review-image img {
+    width: 100%; /* Prend toute la largeur */
+    height: auto; /* Garde le ratio d'aspect */
+    max-height: 400px; /* Limite la hauteur */
+    object-fit: cover; /* Remplit l'espace sans déformer l'image */
+}
+
+.review-details {
+    padding: 2rem;
+    flex: 1; /* Permet de prendre le reste de l'espace */
+}
+
+.review-details h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* Titre en majuscules */
+    letter-spacing: 1px; /* Espace entre les lettres */
+}
+
+.review-details p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.review-details .cta-btn {
+    background-color: #F13729;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.review-details .cta-btn:hover {
+    background-color: #D22C1E;
+}
+/* REVUES */
+
+#revues {
+    padding: 2rem 0; /* Réduit l'espace vertical */
+    text-align: center;
+}
+
+#revues h2 {
+    font-size: 2.5rem;
+    color: #F13729;
+    margin-bottom: 0.5rem; /* Réduit l'écart avec le sous-titre */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    position: relative;
+}
+
+#revues h2::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: #F13729;
+    margin: 0.5rem auto;
+}
+
+#revues p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem; /* Réduit l'écart avec les revues */
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.revue-mosaic {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0; /* Espace autour des cartes */
+    flex-wrap: wrap; /* Permet le passage à la ligne si nécessaire */
+}
+
+.revue-card {
+    width: 300px; /* Largeur de la carte */
+    height: 500px; /* Hauteur de la carte */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.revue-card.star {
+    transform: scale(1.05);
+    border: 2px solid #F13729;
+}
+
+.revue-cover {
+    width: 100%;
+    height: 100%;
+}
+
+.revue-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* S'assure que l'image remplit l'espace */
+}
+
+.revue-card:hover img {
+    filter: blur(5px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.revue-card:hover .overlay {
+    opacity: 1;
+}
+
+.download-btn {
+    background-color: #F13729;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background-color: #D22C1E;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .revue-card {
+        width: 250px; /* Ajuste la largeur pour les écrans intermédiaires */
+        height: 400px; /* Ajuste la hauteur pour les écrans intermédiaires */
+    }
+}
+
+@media (max-width: 768px) {
+    #revues h2 {
+        font-size: 2rem; /* Réduit la taille du titre pour les mobiles */
+    }
+
+    #revues p {
+        font-size: 1rem; /* Réduit la taille du sous-titre pour les mobiles */
+    }
+
+    .revue-card {
+        width: 200px; /* Réduit la largeur pour les mobiles */
+        height: 350px; /* Ajuste la hauteur pour les mobiles */
+    }
+}
+
+@media (max-width: 480px) {
+    #revues h2 {
+        font-size: 1.5rem; /* Encore plus petit pour les petits écrans */
+    }
+
+    #revues p {
+        font-size: 0.9rem; /* Encore plus petit pour les petits écrans */
+    }
+
+    .revue-card {
+        width: 150px; /* Réduit encore pour les très petits écrans */
+        height: 300px; /* Ajuste la hauteur pour les très petits écrans */
+    }
+}
+
+.revue-header {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+    padding: 0.5rem; /* Espace autour du texte */
+    text-align: center; /* Centre le texte */
+    border-radius: 10px 10px 0 0; /* Coins arrondis en haut */
+}
+
+.revue-number {
+    font-size: 1rem; /* Taille du numéro */
+    color: #F13729; /* Couleur distinctive */
+    font-weight: bold; /* Épaisseur du texte */
+}
+
+.revue-title {
+    font-size: 1.2rem; /* Taille du titre */
+    color: #333; /* Couleur du titre */
+    margin: 0; /* Enlève la marge par défaut */
+}
+
+.badge-quality {
+    position: absolute;
+    top: 10px; /* Positionner en haut de la carte */
+    left: 10px; /* Aligné à gauche */
+    background-color: #F13729; /* Couleur de fond du badge */
+    color: white; /* Couleur du texte */
+    padding: 5px 10px; /* Espace autour du texte */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: bold; /* Épaisseur du texte */
+    font-size: 0.9rem; /* Taille du texte */
+    z-index: 1; /* S'assurer que le badge est au-dessus des autres éléments */
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    .review-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Section Newsletter */
+#newsletter {
+    background-color: #FFF4E6; /* Une couleur chaude et douce */
+    padding: 3rem 1.5rem; /* Ajout de padding pour plus d'espace */
+    text-align: center;
+    margin: 50px 0; /* Plus de marge en haut et en bas */
+    border-radius: 10px; /* Arrondi les bords pour un design plus doux */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre légère */
+    transition: all 0.3s ease-in-out; /* Transition pour des animations fluides */
+}
+
+#newsletter:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Effet d'ombre au survol */
+}
+
+#newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    letter-spacing: 1px; /* Espacement pour aérer le texte */
+    font-weight: 700;
+}
+
+#newsletter p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Flex-wrap pour que le contenu passe en colonne sur mobile */
+}
+
+#newsletter input[type="email"] {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px; /* Limite la taille sur les grands écrans */
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
+    transition: all 0.3s ease; /* Animation fluide */
+}
+
+#newsletter input[type="email"]:focus {
+    outline: none;
+    border-color: #ff7f50; /* Couleur de focus */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Effet de focus */
+}
+
+#newsletter button {
+    padding: 1rem 2.5rem;
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#newsletter button:hover {
+    background-color: #F13729;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #newsletter form {
+        flex-direction: column;
+    }
+
+    #newsletter input[type="email"] {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
+    #newsletter button {
+        width: 100%;
+    }
+}
+/* Section Articles */
+#articles {
+    padding: 3rem 0;
+    background-color: #fff4e6;
+}
+
+.article-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espace entre les articles */
+    justify-content: space-between;
+}
+
+.article-item {
+    background-color: #ffebcd;
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1 1 calc(33.333% - 20px); /* Ajuste la largeur pour tenir compte du gap */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    max-width: calc(33.333% - 20px); /* Assure la bonne largeur */
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+}
+
+.article-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.article-item:hover {
+    transform: scale(1.05);
+}
+
+/* Styles pour la navigation des articles */
+.article-nav {
+    margin-bottom: 2rem;
+}
+
+.article-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffe4b5; /* Arrière-plan pour la barre de navigation */
+    border-radius: 10px;
+}
+
+.article-nav li {
+    margin: 0;
+}
+
+.article-nav a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+.article-nav a.active {
+    background-color: #F13729; /* Couleur d'arrière-plan pour l'élément actif */
+    color: white;
+    border-radius: 10px; /* Coins arrondis pour l'élément actif */
+}
+
+.article-nav a:hover {
+    background-color: #f06c6c; /* Couleur d'arrière-plan au survol */
+    color: white;
+}
+
+.read-article-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F13729; /* Couleur de fond rouge */
+    color: white; /* Couleur du texte blanc */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin-top: 1rem; /* Espace au-dessus du bouton */
+}
+
+.read-article-btn:hover {
+    background-color: #D22C1E; /* Couleur au survol */
+}
+
+.read-article-btn:active {
+    transform: scale(0.98); /* Réaction lors du clic */
+}
+
+/* Enlever le soulignement et la couleur violette des liens */
+.article-item a {
+    text-decoration: none; /* Retire le soulignement */
+    color: inherit; /* Garde la couleur du texte par défaut */
+}
+
+.article-item a:hover {
+    color: #333; /* Change la couleur au survol si tu le souhaites */
+}
+
+/* -------- Media Queries for Responsive Design -------- */
+
+/* Pour les téléphones (écrans jusqu'à 600px) */
+@media (max-width: 600px) {
+    .article-grid {
+        flex-direction: column; /* Empile les articles verticalement */
+    }
+
+    .article-item {
+        flex: 1 1 100%; /* Prend 100% de la largeur de l'écran */
+        max-width: 100%; /* Assure la bonne largeur sur mobile */
+    }
+
+    .article-nav ul {
+        flex-direction: column; /* La navigation passe en colonne sur mobile */
+        gap: 10px; /* Ajoute un espace entre les éléments de navigation */
+    }
+
+    .article-nav a {
+        padding: 10px;
+    }
+}
+
+/* Pour les tablettes (écrans entre 600px et 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .article-item {
+        flex: 1 1 calc(50% - 20px); /* Chaque article prend 50% de la largeur */
+        max-width: calc(50% - 20px);
+    }
+
+    .article-nav ul {
+        justify-content: space-around;
+    }
+}
+
+/* Pour les petits écrans d'ordinateurs (écrans entre 901px et 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .article-item {
+        flex: 1 1 calc(33.333% - 20px); /* Chaque article prend 33% de la largeur */
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+/* Pour les grands écrans (au-delà de 1200px) */
+@media (min-width: 1201px) {
+    .article-item {
+        flex: 1 1 calc(33.333% - 20px); /* Retourne à 33% pour les grands écrans */
+        max-width: calc(33.333% - 20px);
+    }
+}
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker background for a sleek look */
+    overflow: hidden; /* Hide scrollbars */
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Smooth fade-in effect */
+    opacity: 0; /* Start with invisible */
+    transform: translateY(-50px); /* Start modal slightly above view for smooth slide-in */
+    padding: 0 10px; /* Add some padding */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    margin: 5% auto; /* Center horizontally and add some vertical space */
+    padding: 30px;
+    border-radius: 18px;
+    border: none; /* Remove border for a cleaner look */
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Add a smooth shadow */
+    position: relative; /* Needed for positioning the close button */
+    overflow: hidden; /* Hide overflow for a sleek look */
+    opacity: 0;
+    transform: scale(0.9); /* Start smaller for scale animation */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Modal open */
+.modal.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Animate back to original position */
+}
+
+/* Modal content open */
+.modal-content.show {
+    opacity: 1;
+    transform: scale(1); /* Smoothly scale up the modal */
+}
+
+/* Close button */
+.close-btn {
+    color: #333;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: red;
+    text-decoration: none;
+}
+
+
+#pdf-viewer.show {
+    opacity: 1;
+}
+
+/* Prevent background scrolling */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Centrer le conteneur de la barre de recherche */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative; /* Nécessaire pour positionner la croix à l'intérieur */
+    width: 100%;
+}
+
+/* Conteneur de la barre de recherche pour gérer la position relative de la croix */
+.search-container {
+    position: relative;
+    width: 500px; /* Largeur de la barre */
+    margin: 0 auto; /* Centre la barre de recherche */
+}
+
+/* Style moderne de la barre de recherche */
+.search-bar {
+    width: 100%; /* Prend toute la largeur de son conteneur */
+    padding: 10px 40px 10px 20px; /* Ajusté pour laisser de la place à la croix à droite */
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    outline: none;
+    display: block;
+}
+
+/* Bouton de suppression (croix) */
+.clear-search-btn {
+    position: absolute;
+    right: 15px; /* Toujours à droite du conteneur */
+    top: 52%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+/* Changer la couleur au survol */
+.clear-search-btn:hover {
+    color: #F13729;
+}
+
+/* Ajouter un effet au survol */
+.search-bar:hover {
+    border-color: #aaa;
+}
+
+/* Effet au focus */
+.search-bar:focus {
+    border-color: #F13729;
+    box-shadow: 0px 4px 12px rgba(241, 55, 41, 0.3);
+}
+
+/* Placeholder stylisé */
+.search-bar::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* Animation d'apparition en douceur */
+.search-bar {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+    .search-container {
+        width: 80%; /* Barre ajustée à 80% de la largeur sur les écrans moyens */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        width: 90%; /* Ajuste la largeur pour les petits écrans */
+    }
+}
+/* Style des titres H2 dans la section des articles */
+.article-section h2 {
+    font-size: 2rem; /* Taille du texte pour les titres */
+    color: #F13729; /* Couleur de texte correspondant à la palette */
+    margin-bottom: 1rem; /* Espacement sous le titre */
+    text-align: center; /* Centrer le titre */
+    font-weight: 700; /* Poids du texte pour le titre */
+    border-bottom: 2px solid #F13729; /* Ligne en dessous du titre */
+    padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
+    max-width: 80%; /* Largeur maximale du titre */
+    margin: 0 auto 2rem auto; /* Centrer le titre et espacement */
+}
+
+@media (max-width: 768px) {
+    .article-section h2 {
+        font-size: 1.75rem; /* Ajuste la taille du texte sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .article-section h2 {
+        font-size: 1.5rem; /* Taille du texte encore plus petite pour les très petits écrans */
+    }
+}
+
+
+/* Style pour le conteneur des articles filtrés */
+#filtered-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style de chaque article filtré */
+#filtered-results .article-item {
+    flex: 1 1 calc(33.333% - 20px); /* Trois articles par ligne avec un espacement */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffebcd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Effet au survol des articles filtrés */
+#filtered-results .article-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#filtered-title {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-size: 1.2rem; /* Ajuste la taille si nécessaire */
+    visibility: visible; /* Rend le titre visible */
+}
+
+#filtered-title.empty {
+    display: none; /* Cache complètement le titre si aucun résultat */
+}
+
+/* -------- Media Queries for Responsive Design -------- */
+
+/* Pour les tablettes (écrans jusqu'à 1024px) */
+@media (max-width: 1024px) {
+    #filtered-results .article-item {
+        flex: 1 1 calc(50% - 20px); /* Deux articles par ligne pour les écrans moyens */
+    }
+}
+
+/* Pour les tablettes et petits écrans (jusqu'à 768px) */
+@media (max-width: 768px) {
+    #filtered-results {
+        padding: 10px; /* Réduire le padding pour les petits écrans */
+        gap: 15px; /* Réduire l'espacement */
+    }
+
+    #filtered-results .article-item {
+        flex: 1 1 calc(50% - 15px); /* Deux articles par ligne */
+        padding: 15px; /* Réduire le padding des articles */
+    }
+}
+
+/* Style pour forcer un article par ligne sur mobile */
+@media (max-width: 480px) {
+    #filtered-results .article-item {
+        flex: none !important; /* Désactive l'utilisation de flex pour cet écran */
+        width: 100% !important; /* Force la largeur de chaque article à 100% */
+        max-width: 100% !important; /* Assure que la largeur maximale reste 100% */
+        margin: 0 0 20px 0 !important; /* Ajoute un espace sous chaque article */
+    }
+
+    #filtered-results {
+        display: block !important; /* Forcer le conteneur à être en bloc */
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 1rem; /* Espacement depuis le bas */
+    right: 1rem; /* Espacement depuis la droite */
+    background-color: #F13729; /* Couleur de fond de la flèche */
+    color: #fff; /* Couleur du texte */
+    border: none;
+    border-radius: 50%; /* Arrondir le bouton */
+    width: 3rem; /* Largeur du bouton */
+    height: 3rem; /* Hauteur du bouton */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Taille de la flèche */
+    text-decoration: none; /* Supprimer le soulignement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour l'effet de profondeur */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour les effets au survol */
+  }
+  
+  .back-to-top:hover {
+    background-color: #555; /* Couleur de fond au survol */
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+  }
+  
+  .back-to-top:focus {
+    outline: none; /* Supprimer l'encadré de focus */
+  }
+
+  a {
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    color: inherit; /* Garde la couleur du texte normal */
+}
+/* PDF viewer */
+#pdf-viewer {
+    width: 99%;
+    height: 75vh; /* Ajuste la hauteur selon tes besoins */
+    border: none;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Ajout de la transition */
+    transform: scale(0.9); /* Commence légèrement réduit */
+}
+
+#pdf-viewer.show {
+    opacity: 1;
+    transform: scale(1); /* Élargit à sa taille normale */
+}
+
+/* Style de la section Articles Récents */
+#recent-articles {
+    padding: 25px 0;
+    background-color: #f9f9f9;
+}
+
+.header-section {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.header-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.header-section p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Grille des articles */
+.article-mosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Style de chaque article */
+.article-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre de l'article */
+.article-title {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.article-header {
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+/* Badge pour les nouveaux articles */
+.new-badge {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.cine-badge {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    background-color: black;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.bd-badge {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    background-color: black;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.article-cover {
+    position: relative;
+}
+
+.article-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.article-card:hover .overlay {
+    opacity: 1;
+}
+
+.read-more-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.article-excerpt {
+    padding: 15px;
+    color: #666;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Latest Content Section */
+.latest-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    cursor: pointer;
+    padding-top: 25px;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    margin-top: 25px;
+}
+
+.latest-article, .latest-video {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 500px;
+    min-width: 300px; /* Largeur minimale pour éviter que les éléments ne deviennent trop petits */
+    max-width: calc(50% - 1rem); /* Largeur maximale pour les écrans moyens */
+}
+
+.latest-article:hover, .latest-video:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
+    cursor: pointer;
+}
+
+.latest-article img {
+    width: 100%;
+    height: 315px; /* Hauteur maximale pour l'image */
+    object-fit: cover; /* Assure que l'image garde son format sans déformation */
+    border-radius: 8px;
+}
+
+.latest-article h2, .latest-video h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333; /* Gris très foncé pour les titres d'articles */
+}
+
+.latest-article a {
+    color: #007bff; /* Bleu doux pour les liens */
+    text-decoration: none;
+}
+
+.latest-article a:hover {
+    text-decoration: underline;
+}
+
+.latest-video iframe {
+    width: 100%;
+    height: 315px; /* Hauteur ajustée pour une meilleure proportion */
+    border-radius: 8px;
+}
+
+.latest-article h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.latest-article p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.latest-video h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.latest-video p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+/* Styles pour le contenu de la page HTML */
+#page-viewer {
+    width: 99%;
+    height: 75vh;
+    border: none;
+    opacity: 0; /* Initialement invisible */
+    transform: scale(0.95); /* Réduire légèrement l'échelle */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Transition fluide pour l'opacité et l'échelle */
+}
+
+#page-viewer.show {
+    opacity: 1; /* Opacité pleine lorsque visible */
+    transform: scale(1); /* Retour à l'échelle normale */
+}
+
+/* Media Queries pour rendre le contenu plus responsive */
+@media (max-width: 768px) {
+    .latest-content {
+        flex-direction: column; /* Colonne pour les petits écrans */
+        gap: 1rem; /* Espace entre les blocs réduit */
+    }
+    
+    .latest-article, .latest-video {
+        max-width: 100%; /* Éléments prennent toute la largeur sur petits écrans */
+    }
+    
+    .latest-article img, .latest-video iframe {
+        height: 150px; /* Réduction de la hauteur des images et vidéos */
+    }
+}
+
+.social-media {
+    background-color: #fefefe; /* Fond clair pour une apparence propre */
+    text-align: center; /* Centre le texte et les icônes */
+    padding: 25px; /* Espacement autour de la section */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin: 2rem 0; /* Espace autour de la section */
+}
+
+.social-media h2 {
+    font-size: 1.8rem; /* Taille du titre */
+    margin-bottom: 1rem; /* Espace en dessous du titre */
+    color: #333; /* Couleur sombre pour le texte */
+}
+
+.social-icons {
+    margin-top: 75px;
+    display: flex; /* Affiche les icônes en ligne */
+    justify-content: center; /* Centre les icônes */
+    gap: 1.5rem; /* Espace entre les icônes */
+    animation: fadeInUp 1.5s ease-in-out;
+    margin-bottom: 25px;
+
+}
+
+.social-icons a {
+    display: inline-block; /* Pour que les icônes se comportent comme des boutons */
+}
+
+.social-icons img {
+    width: 60px; /* Largeur des icônes */
+    height: auto; /* Hauteur automatique pour maintenir le ratio */
+    transition: transform 0.3s; /* Transition pour l'effet au survol */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+}
+
+/* Bouton de partage */
+.share-btn {
+    background-color: #F13729;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.share-btn:hover {
+    background-color: #d32f2f; /* Couleur du bouton au survol */
+}
+
+/* Pop-up de partage moderne */
+.share-popup {
+    background-color: rgba(255, 255, 255, 0.95); /* Légère transparence */
+    border-radius: 12px; /* Bordures arrondies */
+    padding: 30px; /* Espace intérieur */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Échelle réduite par défaut */
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Ombre profonde */
+    backdrop-filter: blur(10px); /* Effet de flou derrière le pop-up */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animation douce */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.share-popup.show {
+    transform: translate(-50%, -50%) scale(1); /* Échelle normale */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Style pour l'input (URL) */
+.share-popup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: underline; /* Surlignage par défaut */
+    color: #007bff;
+}
+
+/* Conteneur pour les boutons */
+.share-popup .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espace entre les boutons */
+}
+
+/* Style pour les boutons */
+.share-popup button {
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.share-popup button:hover {
+    opacity: 0.7; /* Changement de couleur au survol */
+}
+
+/* Optionnel : Effet d'apparition en douceur lors de l'ouverture */
+@keyframes popupFadeIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Section Hero pour l'article */
+.hero-template {
+    padding-top: 100px; /* Ajuste selon la hauteur du header */
+    max-width: 1000px; /* Limite la largeur pour simuler un format A4 */
+    margin: 0 auto; /* Centre la section sur la page */
+    padding: 20px; /* Espace intérieur pour un meilleur espacement du texte */
+    background-color: #fff; /* Fond blanc pour un effet "papier" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    position: relative;
+    margin-top: 150px; /* Espace sous le header */
+}
+/* Pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 768px) {
+    .hero-template {
+        max-width: 90%; /* Réduit la largeur */
+        margin-left: 25px; /* Supprime le décalage latéral */
+        padding-top: 80px; /* Ajuste le padding en fonction de la taille de l'écran */
+    }
+}
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 480px) {
+    .hero-template {
+        max-width: 95%; /* Réduit encore la largeur */
+        margin-left: 25px;
+        padding-top: 60px; /* Ajuste davantage le padding */
+        margin-top: 100px; /* Réduit l'espace au-dessus */
+    }
+}
+
+.article-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.author-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Photo ronde pour l'auteur */
+    margin-right: 15px;
+    margin-top: 25px;
+}
+
+.meta-info {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 25px;
+}
+.meta-info p {
+    margin: 0;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.publish-date {
+    color: #999;
+}
+
+.article-titre {
+    font-size: 2rem; /* Taille de police plus grande pour le titre */
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.article-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #F13729; /* Couleur du trait sous le titre */
+    margin: 15px 0;
+}
+
+.article-body {
+    text-align: justify; /* Justifie le texte pour un rendu plus "pro" */
+    line-height: 1.8; /* Espacement pour une meilleure lisibilité */
+    font-size: 1.1rem;
+    color: #333;
+}
+/* Style pour les paragraphes */
+.article-body p {
+    margin-bottom: 20px;
+}
+
+/* Style pour la vidéo YouTube */
+.video-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.video-container {
+    margin: 20px auto; /* Centre horizontalement */
+    position: relative;
+    width: 60%; /* Ajuste la largeur de la vidéo (modifiable) */
+    padding-bottom: 33.75%; /* Rapport d'aspect 16:9 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries pour rendre le design responsive */
+@media (max-width: 1024px) {
+    .video-container {
+        width: 80%; /* Réduit la taille de la vidéo sur les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        width: 90%; /* Réduit encore sur les écrans plus petits */
+        padding-bottom: 50%; /* Ajuste le rapport d'aspect pour plus de hauteur */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        width: 100%; /* Vidéo pleine largeur sur mobile */
+        padding-bottom: 56.25%; /* Ratio 16:9 pour les écrans très petits */
+    }
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .hero-template {
+        max-width: 90%;
+        padding: 10px;
+        margin-top: 100px;
+    }
+
+    .article-titre {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-template {
+        max-width: 95%;
+        margin-top: 80px;
+    }
+
+    .article-titre {
+        font-size: 1.2rem;
+    }
+}
+
+.back-button {
+    position: absolute; /* Positionnement absolu */
+    top: 10px; /* Espacement depuis le haut */
+    left: 10px; /* Espacement depuis la gauche */
+    background-color: #ff4c60; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 15px; /* Espacement interne */
+    border-radius: 25px; /* Coins arrondis */
+    font-size: 0.8rem; /* Taille du texte */
+    text-decoration: none; /* Pas de soulignement */
+    display: flex;
+    align-items: center; /* Centrer verticalement */
+    z-index: 10; /* Mettre le bouton au-dessus des autres éléments */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour effet */
+}
+
+.back-button:hover {
+    background-color: #ff1f40; /* Couleur de fond au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+.back-button:before {
+    display: inline-block;
+    margin-right: 8px; /* Espace entre la flèche et le texte */
+    font-size: 1.5rem; /* Taille de la flèche */
+}
+
+/* Media queries pour rendre le bouton responsive */
+@media (max-width: 768px) {
+    .back-button:before {
+        display: none; /* Masquer la flèche sur les écrans plus petits */
+    }
+
+    .back-button {
+        padding: 10px 8px; /* Ajuster le padding pour les écrans petits */
+        font-size: 0.7rem; /* Réduire la taille du texte sur mobile */
+    }
+}
+
+.latest-content .latest-article a {
+    text-decoration: none; /* Enlève le surlignement (underline) */
+    color: inherit; /* Utilise la couleur par défaut du texte parent */
+  }
+  
+  .latest-content .latest-article a:hover {
+    text-decoration: none; /* Assure qu'il n'y a pas de surlignement au survol */
+    color: inherit; /* Garde la même couleur au survol */
+  }
+
+  /* Section REVUE Hero */
+.revue-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 50px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Assurez-vous que le conteneur est relatif */
+}
+
+.revue-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligner en haut */
+    gap: 10px; /* Espace entre les éléments */
+}
+
+.revue-description {
+    flex: 1;
+    max-width: 45%; /* Largeur maximale pour la description */
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    justify-content: flex-start; /* Aligner le texte en haut */
+    margin-left: 10px; /* Ajout d'un petit espace à gauche */
+}
+
+.revue-image {
+    position: relative;
+    flex: 1;
+    max-width: 40%; /* Taille de l'image */
+    margin: 0; /* Enlever toute marge */
+}
+
+.revue-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.revue-image:hover .overlay {
+    opacity: 1; /* Afficher l'overlay au survol */
+}
+
+.revue-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.revue-image:hover .revue-cover {
+    filter: blur(5px);
+}
+
+.read-revue-btn {
+    background-color: #ff4c60;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.read-revue-btn:hover {
+    background-color: #ff1f40;
+}
+
+
+/* Style pour le titre de la revue */
+.revue-title {
+    font-size: 2.5rem; /* Taille de la police */
+    color: #333; /* Couleur sombre pour une bonne lisibilité */
+    margin-bottom: 10px; /* Espacement en bas */
+    text-transform: uppercase; /* Mettre en majuscules */
+    font-weight: bold; /* Mettre le texte en gras */
+    border-bottom: 2px solid #ff4c60; /* Soulignement simple */
+    padding-bottom: 5px; /* Espacement entre le texte et la ligne */
+}
+
+/* Style pour la description */
+.revue-summary {
+    font-size: 1.1rem; /* Taille de la police */
+    color: #555; /* Couleur légèrement plus claire pour la description */
+    line-height: 1.6; /* Hauteur de ligne pour aérer le texte */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Autres styles existants */
+.revue-info {
+    font-size: 0.9rem; /* Taille de la police */
+    color: #777; /* Couleur grise pour le texte d'information */
+}
+
+/* Section Sommaire */
+.revue-sommaire {
+    background-color: #fff;
+    padding: 40px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+/* Style pour le sous-titre de la section sommaire */
+.revue-sommaire h2 {
+    font-size: 2rem; /* Taille de la police */
+    color: #333; /* Couleur sombre pour une bonne lisibilité */
+    margin-bottom: 15px; /* Espacement en bas */
+    text-transform: uppercase; /* Mettre en majuscules */
+    font-weight: bold; /* Mettre le texte en gras */
+    border-bottom: 1px solid #ff4c60; /* Soulignement simple */
+    padding-bottom: 5px; /* Espacement entre le texte et la ligne */
+}
+.sommaire-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.sommaire-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.sommaire-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff4c60;
+    font-size: 1.5rem;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .revue-content {
+        flex-direction: column;
+    }
+
+    .revue-image, .revue-description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .revue-image {
+        margin-bottom: 20px;
+    }
+
+    .revue-title {
+        font-size: 2rem;
+    }
+
+    .revue-summary {
+        font-size: 1rem;
+    }
+}
+
+.back-button {
+    position: absolute; /* Positionnement absolu */
+    top: 20px; /* Espacement depuis le haut */
+    left: 20px; /* Espacement depuis la gauche */
+    background-color: #ff4c60; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 15px; /* Espacement interne */
+    border-radius: 25px; /* Coins arrondis */
+    font-size: 1rem; /* Taille du texte */
+    text-decoration: none; /* Pas de soulignement */
+    display: flex;
+    align-items: center; /* Centrer verticalement */
+    z-index: 10; /* Mettre le bouton au-dessus des autres éléments */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour effet */
+}
+
+.back-button:hover {
+    background-color: #ff1f40; /* Couleur de fond au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+.back-button:before {
+    content: ''; /* Pour ajouter une flèche avec du CSS */
+    display: inline-block;
+    margin-right: 8px; /* Espace entre la flèche et le texte */
+    font-size: 1.5rem; /* Taille de la flèche */
+}
+
+/* Media queries pour rendre le bouton responsive */
+@media (max-width: 768px) {
+    .back-button:before {
+        display: none; /* Masquer la flèche sur les écrans plus petits */
+    }
+
+    .back-button {
+        padding: 10px 8px; /* Ajuster le padding pour les écrans petits */
+        font-size: 0.7rem; /* Réduire la taille du texte sur mobile */
+        margin-left: -15px;
+        margin-top: -15px;
+    }
+}
+
+.latest-content .latest-article a {
+    text-decoration: none; /* Enlève le surlignement (underline) */
+    color: inherit; /* Utilise la couleur par défaut du texte parent */
+  }
+  
+  .latest-content .latest-article a:hover {
+    text-decoration: none; /* Assure qu'il n'y a pas de surlignement au survol */
+    color: inherit; /* Garde la même couleur au survol */
+  }

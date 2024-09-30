@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revue Littérart - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+    <header>
+        <div class="container">
+            <nav>
+              <h1 class="logo">
+                <a href="index.html">Littér<em>Art</em></a>
+            </h1>                
+            <div class="burger-menu" id="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="revues.html">Bulletin Ciné</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <img src="logo/Litter_art_rond.png" alt="Logo de Littér'Art" class="hero-logo">
+            <h2 class="hero-title">Bienvenue sur Littér<em>Art</em></h2>
+            <p class="hero-subtitle">
+                Bienvenue sur LittérArt, votre revue en ligne dédiée au cinéma et à la littérature. <br>
+Découvrez des articles rédigés par des passionnés, ainsi que notre publication phare, le <strong><a href="revues.html">Bulletin Ciné</a></strong>, offrant analyses et critiques de films. 
+LittérArt est un projet bénévole, né de notre passion commune pour le septième art et la littérature. <br> Explorez notre contenu et laissez-vous inspirer !
+            </p>
+            <div class="cta-buttons">
+                <a href="revues.html" class="cta-btn">Bulletins Cinéma</a>
+                <a href="articles.html" class="cta-btn secondary-btn">Nos Articles</a>
+            </div>
+            
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/litterart__/" target="_blank" aria-label="Instagram">
+                        <img src="logo/1.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/litt%C3%A9r-art/" target="_blank" aria-label="LinkedIn">
+                        <img src="logo/3.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://x.com/revue_litterart?s=21" target="_blank" aria-label="X (Twitter)">
+                        <img src="logo/2.png" alt="X">
+                    </a>
+                    <a href="https://www.helloasso.com/associations/litter-art" target="_blank" aria-label="HelloAsso">
+                        <img src="logo/4.png" alt="HelloAsso">
+                    </a>
+                </div>
+            
+        </div>
+    </section>
+
+    <section class="latest-content container">
+        <div class="latest-article" data-page="a_son_image.html">
+          <a href="a_son_image.html">
+          <h2>Notre Dernier Article !</h2>
+          <img src="element_site/index/Design sans titre (2).png" alt="Image de l'article">
+          <div class="article-details">
+            <h3>A son image - Thierry de Peretti</h3>
+            <p>Un aperçu fascinant sur le dernier film à succès et une critique détaillée.</p>
+          </div>
+        </a>
+        </div>
+      
+      
+        <div class="latest-video">
+          <h2> Notre Interview avec Microciné !</h2>
+          <iframe src="https://www.youtube.com/embed/MOl4XSoSg08?si=VyVAoVTxJTSuSmgS" title="YouTube video player" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>
+          <h3>Titre de l'article</h3>
+            <p>Un aperçu fascinant sur le dernier film à succès et une critique détaillée.</p>
+        </div>
+      </section>
+      
+
+    <section id="last-review">
+        <div class="container">
+            <a href="bulletin_4.html" class="review-highlight">
+                <div class="review-image">
+                    <img src="element_site/index/rvindex (1).png" alt="Dernière Revue" />
+                </div>
+                <div class="review-details">
+                    <h2>Dernier Bulletin : Le Chef-d'œuvre Inconnu</h2>
+                    <p>Découvrez notre analyse approfondie du dernier film acclamé par la critique, <strong>"Le Chef-d'œuvre Inconnu"</strong>. Une œuvre captivante qui mêle art visuel et émotion brute.</p>
+                    <span class="cta-btn">Découvrir</span>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <section id="newsletter">
+        <div class="container">
+            <h2>Abonnez-vous à notre newsletter ! </h2>
+            <p>Recevez les dernières critiques et actualités cinéma directement dans votre boîte mail !</p>
+            <form action="" method="post">
+                <input type="email" placeholder="Entrez votre adresse e-mail" required>
+                <button type="submit">S'abonner</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="section-sans-scroll">
+        <div></div>
+        <iframe src="carroussel.html" style="width: 100%; border: none;" onload="this.style.height=this.contentWindow.document.body.scrollHeight + 'px'"></iframe>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Littér<em>Art</em>. Tous droits réservés.</p> 
+    </footer>
+    <a href="#" class="back-to-top" onclick="scrollToTop(event)">
+      &#8593; <!-- Flèche vers le haut -->
+  </a>
+
+<script src="script.js"></script>
+</body>
+</html>

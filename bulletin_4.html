@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulletin Ciné - Revue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <header>
+        <div class="container">
+            <nav>
+              <h1 class="logo">
+                <a href="index.html">Littér<em>Art</em></a>
+            </h1>                
+            <div class="burger-menu" id="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="revues.html">Bulletin Ciné</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<body>
+
+    <!-- Section principale de la revue -->
+    <section class="revue-hero">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-button">
+                &#8592; <!-- Flèche à gauche -->
+                Retour
+            </a>
+            <div class="revue-content">
+                <div class="revue-image">
+                    <a href="pdfs/revue 4.pdf" target="_blank">
+                        <img src="element_site/bulletins ciné/bc4.png" alt="Revue Cinéma" class="revue-cover">
+                        <div class="overlay">
+                            <a href="pdfs/revue 4.pdf" target="_blank" class="read-revue-btn">Lire la Revue</a>
+                        </div>
+                    </a>
+                </div>
+                <div class="revue-description">
+                    <h1 class="revue-title">Bulletin Cinéma n°4: LE CINÉMA BRITANNIQUE</h1>
+                    <p class="revue-summary">Le numéro 4 est marqué par une nouvelle mise en page, de nouvelles méthodes de travail
+                        et surtout une étude plus vaste portée sur le cinéma britannique. Passant de Doctor Who à
+                        Peter Watkins ou Ken Loach, par exemple, la rédaction développe une nouvelle pensée
+                        commune. Les autres textes critiques ici sont marqués par un texte extrêmement
+                        personnel prenant la forme d’un journal intime, par de l’actualité… 
+                        Rédacteur en chef : Erwan Mas
+                        Comité de rédaction : Alex, Enzo Durand, Arthur P, Erwan Courvoisier, Pablo Del Rio,
+                        Emile D, Romain Danton.
+                        En collaboration avec ce numéro : Virgile Brunet, Rémy, Pierre Masson, Jordan, Thibaud
+                        Saliou, Baptiste, Luka Monon, Mateow, Florian Azria, Lou Boyadjian.
+                        Comité de lecture : Adrien Paquin, Jordan, Alex, Louis Cadiou</p>
+                    <p class="revue-info">Publié le : 12 Septembre 2024 | Par : Nom de l'Auteur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Sommaire -->
+    <section class="revue-sommaire">
+        <div class="container">
+            <h2>Sommaire de la Revue</h2>
+            <ul class="sommaire-list">
+                <li>Introduction - Le Contexte du Film</li>
+                <li>Chapitre 1 - Analyse de la Scénarisation</li>
+                <li>Chapitre 2 - La Photographie et l'Esthétique Visuelle</li>
+                <li>Chapitre 3 - La Musique et le Design Sonore</li>
+                <li>Chapitre 4 - Interprétation des Acteurs</li>
+                <li>Conclusion - L'Impact sur l'Industrie Cinématographique</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="section-sans-scroll">
+        <div></div>
+        <iframe src="carroussel.html" style="width: 100%; border: none;" onload="this.style.height=this.contentWindow.document.body.scrollHeight + 'px'"></iframe>
+    </div>
+
+    <!-- Script pour l'overlay modal PDF -->
+    <script>
+        document.querySelectorAll('.revue-cover').forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pdfLink = e.target.parentElement.getAttribute('href');
+                window.open(pdfLink, '_blank');
+            });
+        });
+    </script>
+
+<footer>
+    <p>&copy; 2024 Littér<em>Art</em>. Tous droits réservés.</p> 
+</footer>
+<a href="#" class="back-to-top" onclick="scrollToTop(event)">
+    &#8593; <!-- Flèche vers le haut -->
+</a>
+<script src="script.js"> </script>
+</body>
+
+</html>

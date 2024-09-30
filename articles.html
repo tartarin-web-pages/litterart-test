@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revue Littérart - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+    <header>
+        <div class="container">
+            <nav>
+              <h1 class="logo">
+                <a href="index.html">Littér<em>Art</em></a>
+            </h1>                
+            <div class="burger-menu" id="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="revues.html">Bulletin Ciné</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    </div>
+    <main>
+        <section id="articles">
+            <div class="container">
+                <nav class="article-nav">
+                    <ul>
+                        <li><a href="#all-posts" class="active">Articles Récents</a></li>
+                        <li><a href="#cinema">Cinéma</a></li>
+                        <li><a href="#literature">Littérature</a></li>
+                        <li><a href="#bd">Bande dessinée</a></li>
+                        <li><a href="#festival">Festival La Rochelle Cinéma</a></li>
+                    </ul>
+                </nav> <br>
+                   <!-- Barre de recherche -->
+                <div class="search-container">
+                    <input type="text" id="search-bar" class="search-bar" placeholder="Rechercher un article...">
+                    <button id="clear-search" class="clear-search-btn" aria-label="Effacer la recherche">
+                        &times; <!-- Icône de croix -->
+                    </button>
+                </div>
+
+                   <!-- Conteneur pour les résultats filtrés -->
+                        <div id="filtered-results" class="article-filtered" style="display: none;">
+                            <h2 id="filtered-title"></h2> <!-- Titre pour les résultats filtrés -->
+                            <!-- Les articles filtrés apparaîtront ici -->
+                        </div>
+
+                <!-- Section Tous les posts -->
+                <section id="all-posts" class="article-section">
+                    <h2>Articles Récents</h2>
+                    <div class="article-grid">
+
+                <!-- Article 1 -->
+                    <div class="article-item">
+                        <a href="a_son_image.html" data-pdf="a_son_image.html">
+                        <img src="element_site/articles recommandés/1.png" alt="Article 1">
+                        <h3>Article sur le Cinéma</h3>
+                        <p>Meilleur de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                    </a>
+    <!-- Bouton qui ouvre le même modal -->
+    <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+                    </div>
+
+                <!-- Article 2 -->
+                    <div class="article-item">
+                        <a href="a_son_image.html" data-pdf="a_son_image.html">
+                            <img src="element_site/articles recommandés/2.png" alt="Article 1">
+                        <h3>Article sur le Cinéma</h3>
+                        <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                    </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 3 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/3.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article mais sur un autre genre de cinéma.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+
+    <div class="article-item">
+        <a href="a_son_image.html" data-pdf="a_son_image.html">
+            <img src="element_site/articles recommandés/4.png" alt="Article 1">
+        <h3>Article sur le Cinéma</h3>
+        <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+    </a>
+<!-- Bouton qui ouvre le même modal -->
+<a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+</div>
+                        
+                </section>
+                
+                <!-- Section Cinéma -->
+                <section id="cinema" class="article-section">
+                    <h2>Cinéma</h2>
+                    <div class="article-grid">
+                        <!-- Article 1 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/4.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Actualité cinéma pour les cinéphiles</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 2 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/3.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 3 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/1.png" alt="Article 1">
+                            <h3>Article sur le meilleur film de l'année</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                </section>
+
+                <!-- Section Littérature -->
+                <section id="literature" class="article-section">
+                    <h2>Littérature</h2>
+                    <div class="article-grid">
+                        <!-- Article 1 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/2.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 2 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/1.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 3 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/4.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                </section>
+
+                <!-- Section Bande dessinée -->
+                <section id="bd" class="article-section">
+                    <h2>Bande dessinée</h2>
+                    <div class="article-grid">
+                        <!-- Article 1 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/1.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 2 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/3.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 3 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/2.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                </section>
+
+                <!-- Section Festival La Rochelle Cinéma -->
+                <section id="festival" class="article-section">
+                    <h2>Festival La Rochelle Cinéma</h2>
+                    <div class="article-grid">
+                        <!-- Article 1 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/4.png" alt="Article 1">
+                            <h3>Article sur le meilleur festival de l'année !</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 2 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                            <img src="element_site/articles recommandés/3.png" alt="Article 1">
+                            <h3>Spécial Journal Ciné</h3>
+                            <p>Interview des acteurs français les plus populaires.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                        <!-- Article 3 -->
+                        <div class="article-item">
+                            <a href="a_son_image.html" data-pdf="a_son_image.html">
+                                <img src="element_site/articles recommandés/1.png" alt="Article 1">
+                            <h3>Article sur le Cinéma</h3>
+                            <p>Résumé de l'article sur le cinéma moderne et ses tendances actuelles.</p>
+                        </a>
+        <!-- Bouton qui ouvre le même modal -->
+        <a href="a_son_image.html" class="read-article-btn" data-pdf="a_son_image.html" style="color: white;">Lire l'article</a>
+    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Littér<em>Art</em>. Tous droits réservés.</p>
+    </footer>
+    <a href="#" class="back-to-top" onclick="scrollToTop(event)">
+        &#8593; <!-- Flèche vers le haut -->
+    </a>
+    <script src="script.js"></script>
+</body>
+</html>

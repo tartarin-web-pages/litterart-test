@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critique Cinéma - Inception</title>
+ <style>
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #F13729;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Pied de page */
+footer {
+    background-color: #F13729;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Structure de la page */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Style de la section Articles Récents */
+#recent-articles {
+    padding: 25px 0;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    flex: 1; /* Permet à cette section de prendre tout l'espace disponible */
+}
+
+.header-section {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.header-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.header-section p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Grille des articles */
+.article-mosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Réduire la taille minimum */
+    gap: 15px; /* Espacement entre les articles */
+}
+
+/* Style de chaque article */
+.article-card {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Réduire l'ombre */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%; /* Limiter la largeur maximum */
+    margin: auto; /* Centrer les cartes */
+}
+
+.article-card:hover {
+    transform: translateY(-3px); /* Diminuer la translation au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Réduire l'ombre au survol */
+}
+
+/* Titre de l'article */
+.article-title {
+    font-size: 1.3em; /* Réduire la taille de la police */
+    margin: 10px 0; /* Ajuster les marges */
+    color: #333;
+}
+
+.article-header {
+    padding: 8px 12px; /* Ajuster le padding */
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+/* Badge pour les nouveaux articles */
+.new-badge,
+.cine-badge,
+.bd-badge {
+    position: relative;
+    top: 5px;
+    background-color: black;
+    color: #fff;
+    padding: 4px 8px; /* Ajuster le padding */
+    border-radius: 5px;
+    font-size: 0.8em; /* Réduire la taille de la police */
+}
+
+.new-badge {
+    background-color: #e74c3c;
+}
+
+.article-cover {
+    position: relative;
+}
+
+.article-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.article-card:hover .overlay {
+    opacity: 1;
+}
+
+.read-more-btn {
+    position: absolute;
+    bottom: 15px; /* Ajuster la position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 16px; /* Ajuster le padding */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em; /* Réduire la taille de la police */
+}
+
+.article-excerpt {
+    padding: 10px; /* Ajuster le padding */
+    color: #666;
+    font-size: 0.9em; /* Réduire la taille de la police */
+    line-height: 1.4; /* Ajuster la hauteur de ligne */
+}
+
+/* Carrousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 25%; /* Affiche 4 articles par page par défaut */
+    box-sizing: border-box;
+    padding-right: 10px; /* Espacement entre les articles */
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card {
+    flex-grow: 1; /* Permet aux cartes de prendre la même hauteur */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Aligne le contenu verticalement */
+    height: 100%; /* Assure que la carte prend toute la hauteur de son conteneur */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px; /* Taille des flèches */
+}
+
+.carousel-control.prev {
+    left: 10px; /* Position de la flèche gauche */
+}
+
+.carousel-control.next {
+    right: 10px; /* Position de la flèche droite */
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    .carousel-inner {
+        display: grid; /* Utilisation d'une grille pour les écrans plus petits */
+        grid-template-columns: repeat(2, 1fr); /* 2 articles par ligne */
+        gap: 10px; /* Espacement entre les articles */
+    }
+
+    .carousel-item {
+        flex: none; /* Désactive le flex pour utiliser la grille */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-inner {
+        grid-template-columns: 1fr; /* 1 article par ligne sur petits écrans */
+    }
+}
+</style>
+</head>
+<body>
+
+<section id="recent-articles">
+    <div class="container">
+        <div class="header-section">
+            <h2>Lire Aussi...</h2>
+            <p>Découvrez d'autres articles qui pourrait vous intéresser.</p>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-inner">
+                <!-- Article 1 -->
+                <div class="carousel-item active">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="new-badge">Nouveau</span>
+                            <h4 class="article-title">Critique : Cinéma du monde</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/1.png" alt="Le Chef-d'œuvre Inconnu">
+                            <div class="overlay">
+                                <a href="a_son_image.html" class="read-more-btn" target="_parent">Lire la suite</a>
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>Plongez dans l'univers captivant du Chef-d'œuvre Inconnu, un film révolutionnaire qui mêle émotion et art visuel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="carousel-item">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="new-badge">Nouveau</span>
+                            <h4 class="article-title">Critique : Les Lumières du Cinéma</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/2.png" alt="Les Lumières du Cinéma">
+                            <div class="overlay">
+                                <a href="a_son_image.html" class="read-more-btn" target="_parent">Lire la suite</a>
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>Les Lumières du Cinéma est un hommage vibrant aux maîtres du cinéma, un véritable voyage visuel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="carousel-item">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="bd-badge">Bande Dessinée</span>
+                            <h4 class="article-title">Critique : Un Monde Sans Fin</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/3.png" alt="Un Monde Sans Fin">
+                            <div class="overlay">
+                                <a href="a_son_image.html" class="read-more-btn" target="_parent">Lire la suite</a>
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>Un Monde Sans Fin est un thriller psychologique captivant qui explore les profondeurs de l'âme humaine.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="carousel-item">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="cine-badge">Cinéma</span>
+                            <h4 class="article-title">Critique : L'Aube des Héros</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/4.png" alt="L'Aube des Héros">
+                            <div class="overlay">
+                                <a href="a_son_image.html" class="read-more-btn" target="_parent">Lire la suite</a>
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>L'Aube des Héros est un film épique qui revisite les origines des super-héros avec une nouvelle perspective.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Article 4 -->
+                <div class="carousel-item">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="cine-badge">Cinéma</span>
+                            <h4 class="article-title">Critique : L'Aube des Héros</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/3.png" alt="L'Aube des Héros">
+                            <div class="overlay">
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>L'Aube des Héros est un film épique qui revisite les origines des super-héros avec une nouvelle perspective.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Article 4 -->
+                 <div class="carousel-item">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="cine-badge">Cinéma</span>
+                            <h4 class="article-title">Critique : L'Aube des Héros</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/1.png" alt="L'Aube des Héros">
+                            <div class="overlay">
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>L'Aube des Héros est un film épique qui revisite les origines des super-héros avec une nouvelle perspective.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Article 4 -->
+                <div class="carousel-item">
+                    <div class="article-card">
+                        <div class="article-header">
+                            <span class="cine-badge">Cinéma</span>
+                            <h4 class="article-title">Critique : L'Aube des Héros</h4>
+                        </div>
+                        <div class="article-cover">
+                            <img src="element_site/articles recommandés/4.png" alt="L'Aube des Héros">
+                            <div class="overlay">
+                            </div>
+                        </div>
+                        <div class="article-excerpt">
+                            <p>L'Aube des Héros est un film épique qui revisite les origines des super-héros avec une nouvelle perspective.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentIndex = 0;
+
+function updateArrowVisibility() {
+    const prevArrow = document.querySelector('.carousel-control.prev');
+    const nextArrow = document.querySelector('.carousel-control.next');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const itemsToShow = 4; // Nombre d'articles à afficher
+
+    // Afficher ou masquer les flèches en fonction de la position actuelle
+    prevArrow.style.display = currentIndex > 0 ? 'block' : 'none';
+    nextArrow.style.display = currentIndex < totalItems - itemsToShow ? 'block' : 'none';
+}
+
+function moveSlide(direction) {
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const itemsToShow = 4; // Nombre d'articles à afficher
+
+    // Calculer le nouvel index
+    const newIndex = currentIndex + direction;
+
+    // Vérifier les limites
+    if (newIndex < 0 || newIndex > totalItems - itemsToShow) {
+        return; // Ne pas défiler au-delà des limites
+    }
+
+    // Mettre à jour l'index actuel
+    currentIndex = newIndex;
+
+    // Déplacer le carrousel
+    const offset = -currentIndex * (100 / itemsToShow); // Définir le déplacement
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+
+    // Mettre à jour la visibilité des flèches
+    updateArrowVisibility();
+}
+
+// Appeler pour mettre à jour les flèches à l'initialisation
+updateArrowVisibility();
+</script>
+
+
+</body>
+</html>

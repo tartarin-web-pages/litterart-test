@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revue Littérart - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+    <header>
+        <div class="container">
+            <nav>
+              <h1 class="logo">
+                <a href="index.html">Littér<em>Art</em></a>
+            </h1>                
+            <div class="burger-menu" id="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="revues.html">Bulletin Ciné</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Section Hero -->
+    <section class="hero-template">
+        <div class="container">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">
+                &#8592; Retour
+            </a>
+            <div class="article-head">
+                <div class="article-meta">
+                    <img src="element_site/equipe/erwan mas.png" alt="Auteur" class="author-photo">
+                    <div class="meta-info">
+                        <p class="author-name">Erwan Mas</p>
+                        <p class="publish-date">Publié le 17 Septembre 2024</p>
+                    </div>
+                </div>
+                <h1 class="article-titre">A son image - Thierry de Peretti                </h1>
+                <hr class="article-divider">
+            </div>
+            <div class="article-body">
+<p>C’est autour des images et de la lutte politique que Thierry de Peretti revient sur sa terre natale. Rétrospection aussi bien historique que formelle, 
+    À son image nous donne à voir celle d’une jeune femme de la fin des années 1970 et du mouvement nationaliste corse (FLNC), par les portraits entrelacés d’Antonia, 
+    photographe de Corse Matin à Ajaccio, et de Pascal, son compagnon et millitant indépendantiste. </p> <br>
+                <p>À son image  pose un cadre tragique en s’ouvrant par l’accident routier d’Antonia, prétexte à dérouler une vie marquée par la fatalité. Prête à s'abattre sur chaque personnage du film, une lame de Damoclès surplombe l’analepse du récit. La violence, qu’elle soit politique ou non, insinue et étend partout sa menace. L’évolution même du point de vue photographique d’Antonia, partie en zone de guerre, se fait à travers elle. </p><br>
+                <p>Le conflit politique est la matière même de ce film, forgeant son principal vecteur : la puissance photographique d’Antonia, questionnant le statut de l’image et la portée de la photographie, acte intemporel et synonyme de mémoire. C’est par celle-ci que se découvrira Antonia ; c’est par la photo qu’elle explorera le monde et sa politique, mais surtout qu’elle s’émancipera, en particulier vis-à-vis de ses parents.
+                </p> <br>
+                <p>Le prisme politique du film – introduit dès une scène festive admirable où chants et slogans corses se confondent – examine également la place de la femme dans la lutte indépendantiste, une manière pertinente pour Thierry de Perreti d’apporter un point de vue critique sur un milieu certe millitant, mais où se perpétue pourtant des inégalités. Le film  s’attarde ainsi sur les femmes des militants, sans cesse en train d’attendre leur mari,  toujours en lutte ou en prison, assujetties malgré elles à une structure patriarcale. Antonia, elle, semble être – ou vouloir être – au cœur de l’action. Une scène marque d’ailleurs son ambition lorsqu’elle tente de prendre en photo sous tous les angles Pascal au téléphone avec un camarade. Elle tente de dépasser cette barrière qui les sépare tant, grâce à son appareil photo et grâce à son art. Cette matière politique permet aussi de présenter les limites de la lutte, que l’on voit notamment lors de différents désaccords ou disputes, à l’image du meurtre d’un de leurs camarades suite à ses divergences d’idées avec le mouvement, ou encore lorsque Pascal accepte la venue du frère d’Antonia dans le FLNC. Cette dernière était complètement opposée à cette idée et méprise totalement le fait que Pascal n’ait pas dit à son frère qu’il ne participerait pas aux actions militantes. Celle-ci étant particulièrement dangereuse, d’un point de vue physique mais aussi judiciaire à en voir les constants allers-retours carcéraux de Pascal, comme un cercle vicieux. Une scène accentue d'ailleurs cet effet de pré-destinée, grâce au montage : lorsque Pascal et ses camarades placent une bouteille de gaz chez un couple, évacuent celui-ci de la maison en pleine nuit. Cut. Puis l’on assiste à l'arrestation immédiate du groupe de militants. C’est donc ce qui rythme la vie de Pascal et ses camarades, en constante lutte, que ce soit à l’extérieur ou derrière les barreaux, qui ont décidé de dédier leur vie à l’indépendance corse. A son image marque donc une nouvelle fois la cinématographie de Thierry de Peretti d’un nouveau coup de génie mêlant drame, politique, et surtout espoir.</p>
+                <!-- Ajouter d'autres paragraphes de l'article ici -->
+                <button class="share-btn" onclick="showSharePopup()">Partager cet article</button>
+            
+                <!-- Pop-up de partage caché -->
+                <div id="share-popup" class="share-popup" style="display: none;">
+                    <p>Partager cet article :</p>
+                    <input type="text" id="share-url" value="" readonly>
+                    <button onclick="copyUrl()">Copier</button>
+                    <button onclick="closeSharePopup()">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Vidéo YouTube -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Vidéo YouTube en rapport avec l'article</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/9hWoWeIe3jU?si=-fHrhYTqypq5L6aG" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="recent-articles">
+    <div class="container">
+        <h2>Articles Récents</h2>
+        <p>Découvrez aussi nos derniers articles.</p>
+
+        <div class="article-mosaic">
+            <!-- Article 1 -->
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="new-badge">Nouveau</span> <!-- Badge pour les nouveaux articles -->
+                    <h4 class="article-title">Cinéma du monde</h4> <!-- Titre de l'article -->
+                </div>
+                <div class="article-cover">
+                    <img src="element_site/articles recommandés/1.png" alt="Le Chef-d'œuvre Inconnu">
+                    <div class="overlay">
+                        <a href="a_son_image.html" class="read-more-btn">Lire la suite</a>
+                    </div>
+                </div>
+                <div class="article-excerpt">
+                    <p>Plongez dans l'univers captivant du Chef-d'œuvre Inconnu, un film révolutionnaire qui mêle émotion et art visuel.</p>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="new-badge">Nouveau</span>
+                    <h4 class="article-title">Les Lumières du Cinéma</h4>
+                </div>
+                <div class="article-cover">
+                    <img src="element_site/articles recommandés/2.png" alt="Les Lumières du Cinéma">
+                    <div class="overlay">
+                        <a href="a_son_image.html" class="read-more-btn">Lire la suite</a>
+                    </div>
+                </div>
+                <div class="article-excerpt">
+                    <p>Les Lumières du Cinéma est un hommage vibrant aux maîtres du cinéma, un véritable voyage visuel.</p>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="bd-badge">Bande Dessinée</span>
+                    <h4 class="article-title">Critique : Un Monde Sans Fin</h4>
+                </div>
+                <div class="article-cover">
+                    <img src="element_site/articles recommandés/3.png" alt="Un Monde Sans Fin">
+                    <div class="overlay">
+                        <a href="a_son_image.html" class="read-more-btn">Lire la suite</a>
+                    </div>
+                </div>
+                <div class="article-excerpt">
+                    <p>Un Monde Sans Fin est un thriller psychologique captivant qui explore les profondeurs de l'âme humaine.</p>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="cine-badge">Cinéma</span>
+                    <h4 class="article-title">Critique : L'Aube des Héros</h4>
+                </div>
+                <div class="article-cover">
+                    <img src="element_site/articles recommandés/4.png" alt="L'Aube des Héros">
+                    <div class="overlay">
+                        <a href="a_son_image.html" class="read-more-btn">Lire la suite</a>
+                    </div>
+                </div>
+                <div class="article-excerpt">
+                    <p>L'Aube des Héros est un film épique qui revisite les origines des super-héros avec une nouvelle perspective.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer déjà existant -->
+    <footer>
+        <p>&copy; 2024 Littér<em>Art</em>. Tous droits réservés.</p>
+    </footer>
+    <a href="#" class="back-to-top" onclick="scrollToTop(event)">
+        &#8593; <!-- Flèche vers le haut -->
+    </a>
+    <script>
+    function showSharePopup() {
+        const url = window.location.href; // URL de la page
+        const shareUrlField = document.getElementById('share-url');
+    
+        // Mettre l'URL dans le champ
+        shareUrlField.value = url;
+    
+        // Afficher le pop-up
+        document.getElementById('share-popup').style.display = 'block';
+    
+        // Sélectionner automatiquement le texte de l'URL
+        shareUrlField.focus(); // Met le focus sur le champ de texte
+        shareUrlField.select(); // Sélectionne le texte
+        shareUrlField.setSelectionRange(0, shareUrlField.value.length); // Pour mobiles
+    }
+    
+    function closeSharePopup() {
+        document.getElementById('share-popup').style.display = 'none'; // Fermer le pop-up
+    }
+    
+    function copyUrl() {
+        const urlField = document.getElementById('share-url');
+        urlField.select(); // Sélectionner l'URL
+        document.execCommand('copy'); // Copier l'URL
+        alert('URL copiée dans le presse-papier !');
+    }
+    
+    // Exemple pour montrer le pop-up
+    document.querySelector('.share-popup').classList.add('show');
+    
+    function goBack() {
+        const parentPage = "articles.html"; // Page parent par défaut
+    
+        // Vérifie si la page précédente est dans ton site
+        if (document.referrer && document.referrer.includes(window.location.hostname)) {
+            window.history.back(); // Retour à la page précédente si elle est interne au site
+        } else {
+            window.location.href = parentPage; // Redirige vers la page parent
+        }
+    }
+    // Fonctionnalité du menu hamburger
+document.getElementById('burger-menu').addEventListener('click', function() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('menu-active'); // Affiche ou cache le menu
+});
+const burgerMenu = document.getElementById('burger-menu');
+const navLinks = document.getElementById('nav-links');
+
+burgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+function scrollToTop(event) {
+  event.preventDefault(); // Empêche l'ajout d'une nouvelle entrée dans l'historique
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Défilement fluide vers le haut
+  });
+}
+    </script>
+        
+</body>
+</html>
